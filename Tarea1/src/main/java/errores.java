@@ -27,8 +27,9 @@ public class errores {
             float a, b, c;
             String entrada, nombre;
 
-            
             BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
+            
+            //Pedimos 2 números y sacamos el resto
             
             System.out.println("Escribe el valor de x: ");
             entrada = bufer.readLine();
@@ -39,6 +40,8 @@ public class errores {
             z = y % x;
             System.out.println("El residuo de dividir (" + y + ") entre (" + x + ") es: " + z);
             
+            //Pedimos 2 números y sacamos el producto
+            
             System.out.println("Escribe el valor de a: ");
             entrada = bufer.readLine();
             a = Float.parseFloat(entrada);
@@ -47,6 +50,8 @@ public class errores {
             b = Float.parseFloat(entrada);
             c = a * b ;
             System.out.println("El resultado de multiplicar a por b es: " + c);
+            
+            //Pedimos y sacamos el nombre
             
             System.out.println("Escribe tu nombre: ");
             nombre = bufer.readLine();

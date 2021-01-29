@@ -20,6 +20,8 @@ public class lectura {
         //Declara Variables
         int num1, num2;
         
+        //Mostramos y pedimos los valores
+        
         System.out.println("Escribe el valor del primer número.. ");
         num1 = sc.nextInt();
         

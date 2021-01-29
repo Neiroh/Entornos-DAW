@@ -35,7 +35,7 @@ public class errores {
             System.out.println("Escribe el valor de y: ");
             entrada = bufer.readLine();
             y = Double.parseDouble(entrada);
-            z = y / x;
+            z = y % x;
             System.out.println("El residuo de dividir (" + y + ") entre (" + x + ") es: " + z);
             
             System.out.println("Escribe el valor de a: ");

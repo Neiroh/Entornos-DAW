@@ -25,9 +25,10 @@ public class errores {
        // Declaración de variables
             Double  x, y, z;
             float a, b, c;
+            String entrada, nombre;
+
             
             BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
-            String entrada, nombre;
             
             System.out.println("Escribe el valor de x: ");
             entrada = bufer.readLine();

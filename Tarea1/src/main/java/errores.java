@@ -14,6 +14,8 @@ import java.io.InputStreamReader;
  * @author Gaby Nieva
  */
 
+//Comentario Inutil
+
 public class errores {
 
     /**

@@ -19,7 +19,7 @@ public class Main {
         CCuenta miCuenta;
         double saldoActual;
         
-        miCuenta = new CCuenta("Juan López","1000-2365-85-123456789",2500,0);
+        miCuenta = new CCuenta("Juan López","1000-2365-85-123456789",2500);
         try 
         {
             miCuenta.retirar(2300);

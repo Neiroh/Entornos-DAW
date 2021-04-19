@@ -1,0 +1,1192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="monopoly_ED">
+  <ClassDiagramComponents>
+    <Class name="Main" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="inputNumberOfPlayers" returnType="MainWindow" visibility="private" isStatic="true">
+          <Argument type="MainWindow" name="window"/>
+        </Method>
+        <Method name="main" returnType="String[]" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GoToJailCell" package="edu.ncsu.monopoly" visibility="public" xPosition="403.0" yPosition="156.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="playAction" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GameBoardJail" package="edu.ncsu.monopoly" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="BuyHouseDialog" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="cboMonopoly" type="JComboBox" visibility="private"/>
+        <Field name="cboNumber" type="JComboBox" visibility="private"/>
+        <Field name="player" type="Player" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Player" name="player"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="buildCancelButton" returnType="JButton" visibility="private"/>
+        <Method name="buildMonopolyComboBox" returnType="JComboBox" visibility="private"/>
+        <Method name="buildNumberComboBox" returnType="JComboBox" visibility="private"/>
+        <Method name="buildOKButton" returnType="JButton" visibility="private"/>
+        <Method name="cancelClicked" returnType="void" visibility="private"/>
+        <Method name="okClicked" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="RRCellInfoFormatter" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="format" returnType="Cell" visibility="public">
+          <Argument type="Cell" name="cell"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GUICell" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="cell" type="Cell" visibility="private"/>
+        <Field name="lblInfo" type="JLabel" visibility="private"/>
+        <Field name="lblPlayers" type="JLabel[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Cell" name="cell"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="addCellInfo" returnType="void" visibility="private"/>
+        <Method name="addPlayer" returnType="int" visibility="public">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="createPlayerLabels" returnType="JPanel" visibility="private">
+          <Argument type="JPanel" name="pnlPlayer"/>
+        </Method>
+        <Method name="displayInfo" returnType="void" visibility="public"/>
+        <Method name="getCell" returnType="Cell" visibility="public"/>
+        <Method name="removePlayer" returnType="int" visibility="public">
+          <Argument type="int" name="index"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Main1" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="inputNumberOfPlayers" returnType="MainWindow" visibility="private" isStatic="true">
+          <Argument type="MainWindow" name="window"/>
+        </Method>
+        <Method name="main" returnType="String[]" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GUIRespondDialog" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="response" type="boolean" visibility="private"/>
+        <Field name="txtMessage" type="JTextArea" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getResponse" returnType="boolean" visibility="public"/>
+        <Method name="setDeal" returnType="void" visibility="public">
+          <Argument type="TradeDeal" name="deal"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TestDiceRollDialog" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="btnOK" type="JButton" visibility="private"/>
+        <Field name="txtDiceRoll" type="JTextField" visibility="private"/>
+        <Field name="diceRoll" type="int[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Frame" name="parent"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDiceRoll" returnType="int[]" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ChanceCellInfoFormatter" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="CHANCE_CELL_LABEL" type="String" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="format" returnType="String" visibility="public">
+          <Argument type="Cell" name="cell"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MainWindow" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields>
+        <Field name="eastPanel" type="JPanel" visibility="package"/>
+        <Field name="guiCells" type="ArrayList" visibility="package"/>
+        <Field name="northPanel" type="JPanel" visibility="package"/>
+        <Field name="playerPanels" type="PlayerPanel[]" visibility="package"/>
+        <Field name="southPanel" type="JPanel" visibility="package"/>
+        <Field name="westPanel" type="JPanel" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="addCells" returnType="void" visibility="private">
+          <Argument type="JPanel" name="panel"/>
+          <Argument type="List" name="cells"/>
+        </Method>
+        <Method name="buildPlayerPanels" returnType="void" visibility="private"/>
+        <Method name="enableEndTurnBtn" returnType="void" visibility="public">
+          <Argument type="int" name="playerIndex"/>
+        </Method>
+        <Method name="enablePlayerTurn" returnType="void" visibility="public">
+          <Argument type="int" name="playerIndex"/>
+        </Method>
+        <Method name="enablePurchaseBtn" returnType="void" visibility="public">
+          <Argument type="int" name="playerIndex"/>
+        </Method>
+        <Method name="getDiceRoll" returnType="int[]" visibility="public"/>
+        <Method name="isDrawCardButtonEnabled" returnType="boolean" visibility="public"/>
+        <Method name="isEndTurnButtonEnabled" returnType="boolean" visibility="public"/>
+        <Method name="isGetOutOfJailButtonEnabled" returnType="boolean" visibility="public"/>
+        <Method name="isTradeButtonEnabled" returnType="boolean" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="movePlayer" returnType="void" visibility="public">
+          <Argument type="int" name="index"/>
+          <Argument type="int" name="from"/>
+          <Argument type="int" name="to"/>
+        </Method>
+        <Method name="openRespondDialog" returnType="RespondDialog" visibility="public">
+          <Argument type="TradeDeal" name="deal"/>
+        </Method>
+        <Method name="openTradeDialog" returnType="TradeDialog" visibility="public"/>
+        <Method name="queryCell" returnType="GUICell" visibility="private">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="setBuyHouseEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="setDrawCardEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="setEndTurnEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="enabled"/>
+        </Method>
+        <Method name="setGetOutOfJailEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="setPurchasePropertyEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="enabled"/>
+        </Method>
+        <Method name="setRollDiceEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="setTradeEnabled" returnType="void" visibility="public">
+          <Argument type="int" name="index"/>
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="setupGameBoard" returnType="void" visibility="public">
+          <Argument type="GameBoard" name="board"/>
+        </Method>
+        <Method name="showBuyHouseDialog" returnType="void" visibility="public">
+          <Argument type="Player" name="currentPlayer"/>
+        </Method>
+        <Method name="showMessage" returnType="void" visibility="public">
+          <Argument type="String" name="msg"/>
+        </Method>
+        <Method name="showUtilDiceRoll" returnType="int" visibility="public"/>
+        <Method name="startGame" returnType="void" visibility="public"/>
+        <Method name="update" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="UtilCellInfoFormatter" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="format" returnType="String" visibility="public">
+          <Argument type="Cell" name="cell"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="InfoFormatter" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="1220.0" yPosition="420.0">
+      <Fields>
+        <Field name="cellInfoFormatters" type="Hashtable" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="addFormatters" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="cellInfo" returnType="String" visibility="public" isStatic="true">
+          <Argument type="Cell" name="cell"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PropertyCellInfoFormatter" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="1520.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="format" returnType="String" visibility="public">
+          <Argument type="Cell" name="cell"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FreeParkingCellInfoFormatter" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="1820.0" yPosition="420.0">
+      <Fields>
+        <Field name="FP_CELL_LABEL" type="String" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="format" returnType="String" visibility="public">
+          <Argument type="Cell" name="cell"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GameBoardUtil" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="2120.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="calculateDimension" returnType="Dimension" visibility="public" isStatic="true">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getEastCells" returnType="List" visibility="public" isStatic="true">
+          <Argument type="GameBoard" name="board"/>
+        </Method>
+        <Method name="getNorthCells" returnType="List" visibility="public" isStatic="true">
+          <Argument type="GameBoard" name="board"/>
+        </Method>
+        <Method name="getSouthCells" returnType="List" visibility="public" isStatic="true">
+          <Argument type="GameBoard" name="board"/>
+        </Method>
+        <Method name="getWestCells" returnType="List" visibility="public" isStatic="true">
+          <Argument type="GameBoard" name="board"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UtilDiceRoll" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="20.0" yPosition="820.0">
+      <Fields>
+        <Field name="btnDice" type="JButton" visibility="package"/>
+        <Field name="btnOK" type="JButton" visibility="private"/>
+        <Field name="diceValue" type="int" visibility="private"/>
+        <Field name="lblPrompt" type="JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="showDialog" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="okClicked" returnType="void" visibility="public"/>
+        <Method name="rollDice" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GoCellInfoFormatter" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="320.0" yPosition="820.0">
+      <Fields>
+        <Field name="GO_CELL_LABEL" type="String" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="format" returnType="String" visibility="public">
+          <Argument type="Cell" name="cell"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GotoJailCellInfoFormatter" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="620.0" yPosition="820.0">
+      <Fields>
+        <Field name="GOTO_JAIL_LABEL" type="String" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="format" returnType="String" visibility="public">
+          <Argument type="Cell" name="cell"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="InfoPanel" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="920.0" yPosition="820.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="displayInfo" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CCCellInfoFormatter" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="1220.0" yPosition="820.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="format" returnType="String" visibility="public">
+          <Argument type="Cell" name="cell"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GUITradeDialog" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="1520.0" yPosition="820.0">
+      <Fields>
+        <Field name="btnOK" type="JButton" visibility="private"/>
+        <Field name="cboSellers" type="JComboBox" visibility="private"/>
+        <Field name="deal" type="TradeDeal" visibility="private"/>
+        <Field name="txtAmount" type="JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Frame" name="parent"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="buildSellersCombo" returnType="void" visibility="private"/>
+        <Method name="getTradeDeal" returnType="TradeDeal" visibility="public"/>
+        <Method name="updatePropertiesCombo" returnType="void" visibility="private">
+          <Argument type="Player" name="player"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PlayerPanel" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="1820.0" yPosition="820.0">
+      <Fields>
+        <Field name="btnBuyHouse" type="JButton" visibility="private"/>
+        <Field name="btnDrawCard" type="JButton" visibility="private"/>
+        <Field name="btnEndTurn" type="JButton" visibility="private"/>
+        <Field name="btnGetOutOfJail" type="JButton" visibility="private"/>
+        <Field name="btnPurchaseProperty" type="JButton" visibility="private"/>
+        <Field name="btnRollDice" type="JButton" visibility="private"/>
+        <Field name="btnTrade" type="JButton" visibility="private"/>
+        <Field name="lblMoney" type="JLabel" visibility="private"/>
+        <Field name="lblName" type="JLabel" visibility="private"/>
+        <Field name="player" type="Player" visibility="private"/>
+        <Field name="txtProperty" type="JTextArea" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Player" name="player"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="displayInfo" returnType="void" visibility="public"/>
+        <Method name="isBuyHouseButtonEnabled" returnType="boolean" visibility="public"/>
+        <Method name="isDrawCardButtonEnabled" returnType="boolean" visibility="public"/>
+        <Method name="isEndTurnButtonEnabled" returnType="boolean" visibility="public"/>
+        <Method name="isGetOutOfJailButtonEnabled" returnType="boolean" visibility="public"/>
+        <Method name="isPurchasePropertyButtonEnabled" returnType="boolean" visibility="public"/>
+        <Method name="isRollDiceButtonEnabled" returnType="boolean" visibility="public"/>
+        <Method name="isTradeButtonEnabled" returnType="boolean" visibility="public"/>
+        <Method name="setBuyHouseEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="setDrawCardEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="setEndTurnEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="enabled"/>
+        </Method>
+        <Method name="setGetOutOfJailEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="setPurchasePropertyEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="enabled"/>
+        </Method>
+        <Method name="setRollDiceEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="enabled"/>
+        </Method>
+        <Method name="setTradeEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="b"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="JailCellInfoFormatter" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="2120.0" yPosition="820.0">
+      <Fields>
+        <Field name="JAIL_CELL_LABEL" type="String" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="format" returnType="String" visibility="public">
+          <Argument type="Cell" name="cell"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TradeDeal" package="edu.ncsu.monopoly" visibility="public" xPosition="320.0" yPosition="1220.0">
+      <Fields>
+        <Field name="amount" type="int" visibility="private"/>
+        <Field name="playerIndex" type="int" visibility="private"/>
+        <Field name="propertyName" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getAmount" returnType="int" visibility="public"/>
+        <Method name="getPlayerIndex" returnType="int" visibility="public"/>
+        <Method name="getPropertyName" returnType="String" visibility="public"/>
+        <Method name="makeMessage" returnType="String" visibility="public"/>
+        <Method name="setAmount" returnType="void" visibility="public">
+          <Argument type="int" name="amount"/>
+        </Method>
+        <Method name="setPropertyName" returnType="void" visibility="public">
+          <Argument type="String" name="propertyName"/>
+        </Method>
+        <Method name="setSellerIndex" returnType="void" visibility="public">
+          <Argument type="int" name="playerIndex"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Die" package="edu.ncsu.monopoly" visibility="public" xPosition="620.0" yPosition="1220.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getRoll" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GameBoard" package="edu.ncsu.monopoly" visibility="public" xPosition="920.0" yPosition="1220.0">
+      <Fields>
+        <Field name="cells" type="ArrayList" visibility="private"/>
+        <Field name="chanceCards" type="ArrayList" visibility="private"/>
+        <Field name="colorGroups" type="Hashtable" visibility="private"/>
+        <Field name="communityChestCards" type="ArrayList" visibility="private"/>
+        <Field name="gameMaster" type="GameMaster" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="addCard" returnType="void" visibility="public">
+          <Argument type="Card" name="card"/>
+        </Method>
+        <Method name="addCell" returnType="void" visibility="public">
+          <Argument type="Cell" name="cell"/>
+        </Method>
+        <Method name="addCell" returnType="void" visibility="public">
+          <Argument type="PropertyCell" name="cell"/>
+        </Method>
+        <Method name="drawCCCard" returnType="Card" visibility="public"/>
+        <Method name="drawChanceCard" returnType="Card" visibility="public"/>
+        <Method name="getCell" returnType="Cell" visibility="public">
+          <Argument type="int" name="newIndex"/>
+        </Method>
+        <Method name="getCellNumber" returnType="int" visibility="public"/>
+        <Method name="getPropertiesInMonopoly" returnType="PropertyCell[]" visibility="public">
+          <Argument type="String" name="color"/>
+        </Method>
+        <Method name="getPropertyNumberForColor" returnType="int" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="queryCell" returnType="Cell" visibility="public">
+          <Argument type="String" name="string"/>
+        </Method>
+        <Method name="queryCellIndex" returnType="int" visibility="public">
+          <Argument type="String" name="string"/>
+        </Method>
+        <Method name="removeCards" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GameBoardCCMovePlayer" package="edu.ncsu.monopoly" visibility="public" xPosition="1220.0" yPosition="1220.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="GameBoardUtility" package="edu.ncsu.monopoly" visibility="public" xPosition="1520.0" yPosition="1220.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="CardCell" package="edu.ncsu.monopoly" visibility="public" xPosition="1820.0" yPosition="1220.0">
+      <Fields>
+        <Field name="type" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="type"/>
+          <Argument type="String" name="name"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="playAction" returnType="void" visibility="public"/>
+        <Method name="getType" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GameBoardCCLoseMoney" package="edu.ncsu.monopoly" visibility="public" xPosition="2120.0" yPosition="1220.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="JailCell" package="edu.ncsu.monopoly" visibility="public" xPosition="20.0" yPosition="1620.0">
+      <Fields>
+        <Field name="BAIL" type="int" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="playAction" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GameMaster" package="edu.ncsu.monopoly" visibility="public" xPosition="320.0" yPosition="1620.0">
+      <Fields>
+        <Field name="gameMaster" type="GameMaster" visibility="private" isStatic="true"/>
+        <Field name="MAX_PLAYER" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="dice" type="Die[]" visibility="private"/>
+        <Field name="gameBoard" type="GameBoard" visibility="private"/>
+        <Field name="gui" type="MonopolyGUI" visibility="private"/>
+        <Field name="initAmountOfMoney" type="int" visibility="private"/>
+        <Field name="players" type="ArrayList" visibility="private"/>
+        <Field name="turn" type="int" visibility="private"/>
+        <Field name="utilDiceRoll" type="int" visibility="private"/>
+        <Field name="testMode" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="instance" returnType="GameMaster" visibility="public" isStatic="true"/>
+        <Method name="btnBuyHouseClicked" returnType="void" visibility="public"/>
+        <Method name="btnDrawCardClicked" returnType="Card" visibility="public"/>
+        <Method name="btnEndTurnClicked" returnType="void" visibility="public"/>
+        <Method name="btnGetOutOfJailClicked" returnType="void" visibility="public"/>
+        <Method name="btnPurchasePropertyClicked" returnType="void" visibility="public"/>
+        <Method name="btnRollDiceClicked" returnType="void" visibility="public"/>
+        <Method name="btnTradeClicked" returnType="void" visibility="public"/>
+        <Method name="completeTrade" returnType="void" visibility="public">
+          <Argument type="TradeDeal" name="deal"/>
+        </Method>
+        <Method name="drawCCCard" returnType="Card" visibility="public"/>
+        <Method name="drawChanceCard" returnType="Card" visibility="public"/>
+        <Method name="getCurrentPlayer" returnType="Player" visibility="public"/>
+        <Method name="getCurrentPlayerIndex" returnType="int" visibility="public"/>
+        <Method name="getGameBoard" returnType="GameBoard" visibility="public"/>
+        <Method name="getGUI" returnType="MonopolyGUI" visibility="public"/>
+        <Method name="getInitAmountOfMoney" returnType="int" visibility="public"/>
+        <Method name="getNumberOfPlayers" returnType="int" visibility="public"/>
+        <Method name="getNumberOfSellers" returnType="int" visibility="public"/>
+        <Method name="getPlayer" returnType="Player" visibility="public">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="getPlayerIndex" returnType="int" visibility="public">
+          <Argument type="Player" name="player"/>
+        </Method>
+        <Method name="getSellerList" returnType="ArrayList" visibility="public"/>
+        <Method name="getTurn" returnType="int" visibility="public"/>
+        <Method name="getUtilDiceRoll" returnType="int" visibility="public"/>
+        <Method name="movePlayer" returnType="void" visibility="public">
+          <Argument type="int" name="playerIndex"/>
+          <Argument type="int" name="diceValue"/>
+        </Method>
+        <Method name="movePlayer" returnType="void" visibility="public">
+          <Argument type="Player" name="player"/>
+          <Argument type="int" name="diceValue"/>
+        </Method>
+        <Method name="playerMoved" returnType="void" visibility="public">
+          <Argument type="Player" name="player"/>
+        </Method>
+        <Method name="reset" returnType="void" visibility="public"/>
+        <Method name="rollDice" returnType="int[]" visibility="public"/>
+        <Method name="sendToJail" returnType="void" visibility="public">
+          <Argument type="Player" name="player"/>
+        </Method>
+        <Method name="setAllButtonEnabled" returnType="void" visibility="private">
+          <Argument type="boolean" name="enabled"/>
+        </Method>
+        <Method name="setGameBoard" returnType="void" visibility="public">
+          <Argument type="GameBoard" name="board"/>
+        </Method>
+        <Method name="setGUI" returnType="void" visibility="public">
+          <Argument type="MonopolyGUI" name="gui"/>
+        </Method>
+        <Method name="setInitAmountOfMoney" returnType="void" visibility="public">
+          <Argument type="int" name="money"/>
+        </Method>
+        <Method name="setNumberOfPlayers" returnType="void" visibility="public">
+          <Argument type="int" name="number"/>
+        </Method>
+        <Method name="setUtilDiceRoll" returnType="void" visibility="public">
+          <Argument type="int" name="diceRoll"/>
+        </Method>
+        <Method name="startGame" returnType="void" visibility="public"/>
+        <Method name="switchTurn" returnType="void" visibility="public"/>
+        <Method name="updateGUI" returnType="void" visibility="public"/>
+        <Method name="utilRollDice" returnType="void" visibility="public"/>
+        <Method name="setTestMode" returnType="void" visibility="public">
+          <Argument type="boolean" name="b"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Card" package="edu.ncsu.monopoly" visibility="public" isAbstract="true" xPosition="620.0" yPosition="1620.0">
+      <Fields>
+        <Field name="TYPE_CHANCE" type="int" visibility="public" isStatic="true"/>
+        <Field name="TYPE_CC" type="int" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getLabel" returnType="String" visibility="public" isAbstract="true"/>
+        <Method name="applyAction" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="getCardType" returnType="int" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="MockGUI" package="edu.ncsu.monopoly" visibility="public" xPosition="920.0" yPosition="1620.0">
+      <Fields>
+        <Field name="btnDrawCardState" type="boolean" visibility="private"/>
+        <Field name="btnTradeState" type="boolean[]" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="enableEndTurnBtn" returnType="void" visibility="public">
+          <Argument type="int" name="playerIndex"/>
+        </Method>
+        <Method name="enablePlayerTurn" returnType="void" visibility="public">
+          <Argument type="int" name="playerIndex"/>
+        </Method>
+        <Method name="enablePurchaseBtn" returnType="void" visibility="public">
+          <Argument type="int" name="playerIndex"/>
+        </Method>
+        <Method name="getDiceRoll" returnType="int[]" visibility="public"/>
+        <Method name="isDrawCardButtonEnabled" returnType="boolean" visibility="public"/>
+        <Method name="isEndTurnButtonEnabled" returnType="boolean" visibility="public"/>
+        <Method name="isGetOutOfJailButtonEnabled" returnType="boolean" visibility="public"/>
+        <Method name="isTradeButtonEnabled" returnType="boolean" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="movePlayer" returnType="void" visibility="public">
+          <Argument type="int" name="index"/>
+          <Argument type="int" name="from"/>
+          <Argument type="int" name="to"/>
+        </Method>
+        <Method name="openRespondDialog" returnType="RespondDialog" visibility="public">
+          <Argument type="TradeDeal" name="deal"/>
+        </Method>
+        <Method name="openTradeDialog" returnType="TradeDialog" visibility="public"/>
+        <Method name="setBuyHouseEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="setDrawCardEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="setEndTurnEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="enabled"/>
+        </Method>
+        <Method name="setGetOutOfJailEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="setPurchasePropertyEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="enabled"/>
+        </Method>
+        <Method name="setRollDiceEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="setTradeEnabled" returnType="void" visibility="public">
+          <Argument type="int" name="index"/>
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="showBuyHouseDialog" returnType="void" visibility="public">
+          <Argument type="Player" name="currentPlayer"/>
+        </Method>
+        <Method name="showMessage" returnType="void" visibility="public">
+          <Argument type="String" name="string"/>
+        </Method>
+        <Method name="showUtilDiceRoll" returnType="int" visibility="public"/>
+        <Method name="startGame" returnType="void" visibility="public"/>
+        <Method name="update" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MoneyCard" package="edu.ncsu.monopoly" visibility="public" xPosition="1220.0" yPosition="1620.0">
+      <Fields>
+        <Field name="amount" type="int" visibility="private"/>
+        <Field name="cardType" type="int" visibility="private"/>
+        <Field name="label" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="label"/>
+          <Argument type="int" name="amount"/>
+          <Argument type="int" name="cardType"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="applyAction" returnType="void" visibility="public"/>
+        <Method name="getCardType" returnType="int" visibility="public"/>
+        <Method name="getLabel" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Player" package="edu.ncsu.monopoly" visibility="public" xPosition="1520.0" yPosition="1620.0">
+      <Fields>
+        <Field name="colorGroups" type="Hashtable" visibility="private"/>
+        <Field name="inJail" type="boolean" visibility="private"/>
+        <Field name="money" type="int" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="position" type="Cell" visibility="private"/>
+        <Field name="properties" type="ArrayList" visibility="private"/>
+        <Field name="railroads" type="ArrayList" visibility="private"/>
+        <Field name="utilities" type="ArrayList" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="buyProperty" returnType="void" visibility="public">
+          <Argument type="Cell" name="property"/>
+          <Argument type="int" name="amount"/>
+        </Method>
+        <Method name="canBuyHouse" returnType="boolean" visibility="public"/>
+        <Method name="checkProperty" returnType="boolean" visibility="public">
+          <Argument type="String" name="property"/>
+        </Method>
+        <Method name="exchangeProperty" returnType="void" visibility="public">
+          <Argument type="Player" name="player"/>
+        </Method>
+        <Method name="getAllProperties" returnType="Cell[]" visibility="public"/>
+        <Method name="getMoney" returnType="int" visibility="public"/>
+        <Method name="getMonopolies" returnType="String[]" visibility="public"/>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="getOutOfJail" returnType="void" visibility="public"/>
+        <Method name="getPosition" returnType="Cell" visibility="public"/>
+        <Method name="getProperty" returnType="PropertyCell" visibility="public">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="getPropertyNumber" returnType="int" visibility="public"/>
+        <Method name="getPropertyNumberForColor" returnType="int" visibility="private">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="isBankrupt" returnType="boolean" visibility="public"/>
+        <Method name="isInJail" returnType="boolean" visibility="public"/>
+        <Method name="numberOfRR" returnType="int" visibility="public"/>
+        <Method name="numberOfUtil" returnType="int" visibility="public"/>
+        <Method name="payRentTo" returnType="void" visibility="public">
+          <Argument type="Player" name="owner"/>
+          <Argument type="int" name="rentValue"/>
+        </Method>
+        <Method name="purchase" returnType="void" visibility="public"/>
+        <Method name="purchaseHouse" returnType="void" visibility="public">
+          <Argument type="String" name="selectedMonopoly"/>
+          <Argument type="int" name="houses"/>
+        </Method>
+        <Method name="purchaseProperty" returnType="void" visibility="private">
+          <Argument type="PropertyCell" name="cell"/>
+        </Method>
+        <Method name="purchaseRailRoad" returnType="void" visibility="private">
+          <Argument type="RailRoadCell" name="cell"/>
+        </Method>
+        <Method name="purchaseUtility" returnType="void" visibility="private">
+          <Argument type="UtilityCell" name="cell"/>
+        </Method>
+        <Method name="sellProperty" returnType="void" visibility="public">
+          <Argument type="Cell" name="property"/>
+          <Argument type="int" name="amount"/>
+        </Method>
+        <Method name="setInJail" returnType="void" visibility="public">
+          <Argument type="boolean" name="inJail"/>
+        </Method>
+        <Method name="setMoney" returnType="void" visibility="public">
+          <Argument type="int" name="money"/>
+        </Method>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="setPosition" returnType="void" visibility="public">
+          <Argument type="Cell" name="newPosition"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="resetProperty" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GameBoardFreeParking" package="edu.ncsu.monopoly" visibility="public" xPosition="20.0" yPosition="2020.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Cell" package="edu.ncsu.monopoly" visibility="public" isAbstract="true" xPosition="320.0" yPosition="2020.0">
+      <Fields>
+        <Field name="available" type="boolean" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="owner" type="Player" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="getOwner" returnType="Player" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="isAvailable" returnType="boolean" visibility="public"/>
+        <Method name="playAction" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="setAvailable" returnType="void" visibility="public">
+          <Argument type="boolean" name="available"/>
+        </Method>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="setOwner" returnType="void" visibility="public">
+          <Argument type="Player" name="owner"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MovePlayerCard" package="edu.ncsu.monopoly" visibility="public" xPosition="620.0" yPosition="2020.0">
+      <Fields>
+        <Field name="destination" type="String" visibility="private"/>
+        <Field name="type" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="destination"/>
+          <Argument type="int" name="cardType"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="applyAction" returnType="void" visibility="public"/>
+        <Method name="getCardType" returnType="int" visibility="public"/>
+        <Method name="getLabel" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="RailRoadCell" package="edu.ncsu.monopoly" visibility="public" xPosition="920.0" yPosition="2020.0">
+      <Fields>
+        <Field name="baseRent" type="int" visibility="private" isStatic="true"/>
+        <Field name="COLOR_GROUP" type="String" visibility="public" isStatic="true"/>
+        <Field name="price" type="int" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setBaseRent" returnType="void" visibility="public" isStatic="true">
+          <Argument type="int" name="baseRent"/>
+        </Method>
+        <Method name="setPrice" returnType="void" visibility="public" isStatic="true">
+          <Argument type="int" name="price"/>
+        </Method>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="getRent" returnType="int" visibility="public"/>
+        <Method name="playAction" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="UtilityCell" package="edu.ncsu.monopoly" visibility="public" xPosition="1220.0" yPosition="2020.0">
+      <Fields>
+        <Field name="COLOR_GROUP" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="PRICE" type="int" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setPrice" returnType="void" visibility="public" isStatic="true">
+          <Argument type="int" name="price"/>
+        </Method>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="getRent" returnType="int" visibility="public">
+          <Argument type="int" name="diceRoll"/>
+        </Method>
+        <Method name="playAction" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GameBoardFull" package="edu.ncsu.monopoly" visibility="public" xPosition="1520.0" yPosition="2020.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="GameBoardCCJail" package="edu.ncsu.monopoly" visibility="public" xPosition="1820.0" yPosition="2020.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="GoCell" package="edu.ncsu.monopoly" visibility="public" xPosition="2120.0" yPosition="2020.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="playAction" returnType="void" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MockTradeDialog" package="edu.ncsu.monopoly" visibility="public" xPosition="20.0" yPosition="2420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getTradeDeal" returnType="TradeDeal" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="JailCard" package="edu.ncsu.monopoly" visibility="public" xPosition="320.0" yPosition="2420.0">
+      <Fields>
+        <Field name="type" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="cardType"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="applyAction" returnType="void" visibility="public"/>
+        <Method name="getCardType" returnType="int" visibility="public"/>
+        <Method name="getLabel" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MockRespondDialog" package="edu.ncsu.monopoly" visibility="public" xPosition="620.0" yPosition="2420.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="TradeDeal" name="deal"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getResponse" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GameBoardCCGainMoney" package="edu.ncsu.monopoly" visibility="public" xPosition="920.0" yPosition="2420.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="SimpleGameBoard" package="edu.ncsu.monopoly" visibility="public" xPosition="1220.0" yPosition="2420.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="PropertyCell" package="edu.ncsu.monopoly" visibility="public" xPosition="1520.0" yPosition="2420.0">
+      <Fields>
+        <Field name="colorGroup" type="String" visibility="private"/>
+        <Field name="housePrice" type="int" visibility="private"/>
+        <Field name="numHouses" type="int" visibility="private"/>
+        <Field name="rent" type="int" visibility="private"/>
+        <Field name="sellPrice" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getColorGroup" returnType="String" visibility="public"/>
+        <Method name="getHousePrice" returnType="int" visibility="public"/>
+        <Method name="getNumHouses" returnType="int" visibility="public"/>
+        <Method name="getPrice" returnType="int" visibility="public"/>
+        <Method name="getRent" returnType="int" visibility="public"/>
+        <Method name="playAction" returnType="void" visibility="public"/>
+        <Method name="setColorGroup" returnType="void" visibility="public">
+          <Argument type="String" name="colorGroup"/>
+        </Method>
+        <Method name="setHousePrice" returnType="void" visibility="public">
+          <Argument type="int" name="housePrice"/>
+        </Method>
+        <Method name="setNumHouses" returnType="void" visibility="public">
+          <Argument type="int" name="numHouses"/>
+        </Method>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="int" name="sellPrice"/>
+        </Method>
+        <Method name="setRent" returnType="void" visibility="public">
+          <Argument type="int" name="rent"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GameBoardRailRoad" package="edu.ncsu.monopoly" visibility="public" xPosition="1820.0" yPosition="2420.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="GameBoard14" package="edu.ncsu.monopoly" visibility="public" xPosition="20.0" yPosition="2820.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="FreeParkingCell" package="edu.ncsu.monopoly" visibility="public" xPosition="320.0" yPosition="2820.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="playAction" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="CellInfoFormatter" package="edu.ncsu.monopoly.gui" visibility="public" xPosition="20.0" yPosition="1220.0">
+      <Methods>
+        <Method name="format" returnType="String" visibility="public">
+          <Argument type="Cell" name="cell"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="RespondDialog" package="edu.ncsu.monopoly" visibility="public" xPosition="1820.0" yPosition="1620.0">
+      <Methods>
+        <Method name="getResponse" returnType="boolean" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Interface name="MonopolyGUI" package="edu.ncsu.monopoly" visibility="public" xPosition="2120.0" yPosition="1620.0">
+      <Methods>
+        <Method name="enableEndTurnBtn" returnType="void" visibility="public">
+          <Argument type="int" name="playerIndex"/>
+        </Method>
+        <Method name="enablePlayerTurn" returnType="void" visibility="public">
+          <Argument type="int" name="playerIndex"/>
+        </Method>
+        <Method name="enablePurchaseBtn" returnType="void" visibility="public">
+          <Argument type="int" name="playerIndex"/>
+        </Method>
+        <Method name="getDiceRoll" returnType="int[]" visibility="public"/>
+        <Method name="isDrawCardButtonEnabled" returnType="boolean" visibility="public"/>
+        <Method name="isEndTurnButtonEnabled" returnType="boolean" visibility="public"/>
+        <Method name="isGetOutOfJailButtonEnabled" returnType="boolean" visibility="public"/>
+        <Method name="isTradeButtonEnabled" returnType="boolean" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="movePlayer" returnType="void" visibility="public">
+          <Argument type="int" name="index"/>
+          <Argument type="int" name="from"/>
+          <Argument type="int" name="to"/>
+        </Method>
+        <Method name="openRespondDialog" returnType="RespondDialog" visibility="public">
+          <Argument type="TradeDeal" name="deal"/>
+        </Method>
+        <Method name="openTradeDialog" returnType="TradeDialog" visibility="public"/>
+        <Method name="setBuyHouseEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="setDrawCardEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="setEndTurnEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="enabled"/>
+        </Method>
+        <Method name="setGetOutOfJailEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="setPurchasePropertyEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="enabled"/>
+        </Method>
+        <Method name="setRollDiceEnabled" returnType="void" visibility="public">
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="setTradeEnabled" returnType="void" visibility="public">
+          <Argument type="int" name="index"/>
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="showBuyHouseDialog" returnType="void" visibility="public">
+          <Argument type="Player" name="currentPlayer"/>
+        </Method>
+        <Method name="showMessage" returnType="void" visibility="public">
+          <Argument type="String" name="string"/>
+        </Method>
+        <Method name="showUtilDiceRoll" returnType="int" visibility="public"/>
+        <Method name="startGame" returnType="void" visibility="public"/>
+        <Method name="update" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="TradeDialog" package="edu.ncsu.monopoly" visibility="public" xPosition="2120.0" yPosition="2420.0">
+      <Methods>
+        <Method name="getTradeDeal" returnType="TradeDeal" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="edu.ncsu.monopoly.GameBoardFull" target="edu.ncsu.monopoly.GameBoard"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.GotoJailCellInfoFormatter" target="edu.ncsu.monopoly.Cell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.MainWindow" target="edu.ncsu.monopoly.RespondDialog" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.MovePlayerCard" target="edu.ncsu.monopoly.Card"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.GameBoardCCGainMoney" target="edu.ncsu.monopoly.GameBoard"/>
+    <UseRelation source="edu.ncsu.monopoly.GameBoard" target="edu.ncsu.monopoly.Cell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.ChanceCellInfoFormatter" target="edu.ncsu.monopoly.Cell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.RRCellInfoFormatter" target="edu.ncsu.monopoly.Cell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.UtilCellInfoFormatter" target="edu.ncsu.monopoly.Cell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.TradeDialog" target="edu.ncsu.monopoly.TradeDeal" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="edu.ncsu.monopoly.gui.GUITradeDialog" target="edu.ncsu.monopoly.TradeDialog"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="edu.ncsu.monopoly.gui.PropertyCellInfoFormatter" target="edu.ncsu.monopoly.gui.CellInfoFormatter"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="edu.ncsu.monopoly.gui.JailCellInfoFormatter" target="edu.ncsu.monopoly.gui.CellInfoFormatter"/>
+    <UseRelation source="edu.ncsu.monopoly.MockTradeDialog" target="edu.ncsu.monopoly.TradeDeal" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.GUIRespondDialog" target="edu.ncsu.monopoly.TradeDeal" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="gameMaster" source="edu.ncsu.monopoly.GameBoard" target="edu.ncsu.monopoly.GameMaster" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.RailRoadCell" target="edu.ncsu.monopoly.Cell"/>
+    <UseRelation source="edu.ncsu.monopoly.GameMaster" target="edu.ncsu.monopoly.GameBoard" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.GUITradeDialog" target="edu.ncsu.monopoly.TradeDeal" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="player" source="edu.ncsu.monopoly.gui.BuyHouseDialog" target="edu.ncsu.monopoly.Player" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.GUICell" target="edu.ncsu.monopoly.Cell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.Player" target="edu.ncsu.monopoly.Cell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="owner" source="edu.ncsu.monopoly.Cell" target="edu.ncsu.monopoly.Player" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.GameMaster" target="edu.ncsu.monopoly.TradeDeal" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.MonopolyGUI" target="edu.ncsu.monopoly.Player" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.FreeParkingCellInfoFormatter" target="edu.ncsu.monopoly.Cell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="edu.ncsu.monopoly.MockTradeDialog" target="edu.ncsu.monopoly.TradeDialog"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="edu.ncsu.monopoly.MockRespondDialog" target="edu.ncsu.monopoly.RespondDialog"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.GameBoardRailRoad" target="edu.ncsu.monopoly.GameBoard"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.InfoFormatter" target="edu.ncsu.monopoly.Cell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.GameBoardCCMovePlayer" target="edu.ncsu.monopoly.GameBoard"/>
+    <HasRelation name="cell" source="edu.ncsu.monopoly.gui.GUICell" target="edu.ncsu.monopoly.Cell" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="edu.ncsu.monopoly.gui.MainWindow" target="edu.ncsu.monopoly.MonopolyGUI"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.GoToJailCell" target="edu.ncsu.monopoly.Cell"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.PropertyCell" target="edu.ncsu.monopoly.Cell"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.JailCard" target="edu.ncsu.monopoly.Card"/>
+    <HasRelation name="gui" source="edu.ncsu.monopoly.GameMaster" target="edu.ncsu.monopoly.MonopolyGUI" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="gameBoard" source="edu.ncsu.monopoly.GameMaster" target="edu.ncsu.monopoly.GameBoard" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.GameBoardUtility" target="edu.ncsu.monopoly.GameBoard"/>
+    <UseRelation source="edu.ncsu.monopoly.MonopolyGUI" target="edu.ncsu.monopoly.RespondDialog" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.GameBoardCCJail" target="edu.ncsu.monopoly.GameBoard"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="edu.ncsu.monopoly.gui.UtilCellInfoFormatter" target="edu.ncsu.monopoly.gui.CellInfoFormatter"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.GameBoardCCLoseMoney" target="edu.ncsu.monopoly.GameBoard"/>
+    <UseRelation source="edu.ncsu.monopoly.MockGUI" target="edu.ncsu.monopoly.Player" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.Player" target="edu.ncsu.monopoly.RailRoadCell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="edu.ncsu.monopoly.gui.GUIRespondDialog" target="edu.ncsu.monopoly.RespondDialog"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="edu.ncsu.monopoly.gui.GoCellInfoFormatter" target="edu.ncsu.monopoly.gui.CellInfoFormatter"/>
+    <UseRelation source="edu.ncsu.monopoly.GameMaster" target="edu.ncsu.monopoly.Card" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.GameMaster" target="edu.ncsu.monopoly.GameMaster" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.MockGUI" target="edu.ncsu.monopoly.TradeDialog" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="edu.ncsu.monopoly.gui.FreeParkingCellInfoFormatter" target="edu.ncsu.monopoly.gui.CellInfoFormatter"/>
+    <UseRelation source="edu.ncsu.monopoly.Player" target="edu.ncsu.monopoly.UtilityCell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="gameMaster" source="edu.ncsu.monopoly.GameMaster" target="edu.ncsu.monopoly.GameMaster" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="edu.ncsu.monopoly.gui.GotoJailCellInfoFormatter" target="edu.ncsu.monopoly.gui.CellInfoFormatter"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.GameBoardJail" target="edu.ncsu.monopoly.GameBoard"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.MoneyCard" target="edu.ncsu.monopoly.Card"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.GameBoardUtil" target="edu.ncsu.monopoly.GameBoard" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.GUITradeDialog" target="edu.ncsu.monopoly.Player" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="edu.ncsu.monopoly.gui.RRCellInfoFormatter" target="edu.ncsu.monopoly.gui.CellInfoFormatter"/>
+    <HasRelation name="player" source="edu.ncsu.monopoly.gui.PlayerPanel" target="edu.ncsu.monopoly.Player" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.Player" target="edu.ncsu.monopoly.PropertyCell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.MonopolyGUI" target="edu.ncsu.monopoly.TradeDialog" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.CCCellInfoFormatter" target="edu.ncsu.monopoly.Cell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="edu.ncsu.monopoly.MockGUI" target="edu.ncsu.monopoly.MonopolyGUI"/>
+    <HasRelation name="deal" source="edu.ncsu.monopoly.gui.GUITradeDialog" target="edu.ncsu.monopoly.TradeDeal" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.GoCell" target="edu.ncsu.monopoly.Cell"/>
+    <UseRelation source="edu.ncsu.monopoly.Cell" target="edu.ncsu.monopoly.Player" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.MockGUI" target="edu.ncsu.monopoly.RespondDialog" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.GameBoard" target="edu.ncsu.monopoly.PropertyCell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.FreeParkingCell" target="edu.ncsu.monopoly.Cell"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.JailCell" target="edu.ncsu.monopoly.Cell"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.GoCellInfoFormatter" target="edu.ncsu.monopoly.Cell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.JailCellInfoFormatter" target="edu.ncsu.monopoly.Cell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.GameBoard" target="edu.ncsu.monopoly.Card" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="position" source="edu.ncsu.monopoly.Player" target="edu.ncsu.monopoly.Cell" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.CellInfoFormatter" target="edu.ncsu.monopoly.Cell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.MainWindow" target="edu.ncsu.monopoly.TradeDialog" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.MainWindow" target="edu.ncsu.monopoly.Player" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.GameMaster" target="edu.ncsu.monopoly.Player" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.MainWindow" target="edu.ncsu.monopoly.GameBoard" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.MainWindow" target="edu.ncsu.monopoly.Cell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.CardCell" target="edu.ncsu.monopoly.Cell"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.PropertyCellInfoFormatter" target="edu.ncsu.monopoly.Cell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.UtilityCell" target="edu.ncsu.monopoly.Cell"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.GameBoardFreeParking" target="edu.ncsu.monopoly.GameBoard"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.SimpleGameBoard" target="edu.ncsu.monopoly.GameBoard"/>
+    <IsRelation name="is" source="edu.ncsu.monopoly.GameBoard14" target="edu.ncsu.monopoly.GameBoard"/>
+    <UseRelation source="edu.ncsu.monopoly.GameMaster" target="edu.ncsu.monopoly.MonopolyGUI" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="edu.ncsu.monopoly.Player" target="edu.ncsu.monopoly.Player" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="edu.ncsu.monopoly.gui.ChanceCellInfoFormatter" target="edu.ncsu.monopoly.gui.CellInfoFormatter"/>
+    <UseRelation source="edu.ncsu.monopoly.gui.Main" target="edu.ncsu.monopoly.gui.MainWindow" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="edu.ncsu.monopoly.gui.CCCellInfoFormatter" target="edu.ncsu.monopoly.gui.CellInfoFormatter"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
